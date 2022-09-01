@@ -1,4 +1,4 @@
-import 'package:api_example/characters/character_page.dart';
+import 'package:api_example/routes/pokemon_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -11,6 +11,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(title: 'Api Example', home: CharactersPage());
+    return MaterialApp(
+      title: 'Api Example',
+      initialRoute: '/',
+      onGenerateRoute: (settings) => PokemonRoutes.generateRoute(settings),
+    );
   }
 }
